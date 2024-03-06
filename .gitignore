@@ -1,0 +1,9 @@
+
+/.idea
+/database-database
+database-data/*
+Livecode/bin/*
+Livecode/obj/*
+
+Livecode.Tests/bin/*
+Livecode.Tests/obj/*

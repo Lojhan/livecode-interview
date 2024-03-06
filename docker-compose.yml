@@ -1,0 +1,21 @@
+version: "3.9"
+
+networks:
+  livecode:
+    driver: bridge
+
+services:
+  database:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    platform: linux/amd64
+    networks:
+      - livecode
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Password123
+      - MSSQL_USER=sa
+      - MSSQL_PID=Express
+    ports:
+      - "1433:1433"
+    volumes:
+      - ./database-data:/var/opt/mssql
